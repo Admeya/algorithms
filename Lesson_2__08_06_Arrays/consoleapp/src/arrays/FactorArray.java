@@ -1,5 +1,8 @@
 package arrays;
 
+/**
+ * Умножение на заданный коэффициент
+ */
 public class FactorArray<T> implements IArray<T> {
 
     private Object[] arr;
@@ -12,23 +15,27 @@ public class FactorArray<T> implements IArray<T> {
         size = 0;
     }
 
-    @Override public void add(T item) {
+    @Override
+    public void add(T item) {
         if (size == arr.length) {
             resize();
         }
         arr[size++] = item;
     }
 
-    @Override public int size() {
-        return 0;
+    @Override
+    public int size() {
+        return size;
     }
 
-    @Override public T get(int index) {
-        return (T)arr[index];
+    @Override
+    @SuppressWarnings("unchecked")
+    public T get(int index) {
+        return (T) arr[index];
     }
 
     void resize() {
-        Object[] newArray = new Object[arr.length + factor/ 100];
+        Object[] newArray = new Object[arr.length + arr.length * factor / 100];
         System.arraycopy(arr, 0, newArray, 0, arr.length);
         arr = newArray;
     }

@@ -1,5 +1,10 @@
 package arrays;
 
+/**
+ * Одиночный массив
+ *
+ * @param <T>
+ */
 public class SingleArray<T> implements IArray {
 
     private Object[] arr;
@@ -8,19 +13,20 @@ public class SingleArray<T> implements IArray {
         this.arr = new Object[0];
     }
 
-    @Override public void add(Object item) {
+    @Override
+    public void add(Object item) {
         resize();
-        arr[size()-1] = item;
-
+        arr[size() - 1] = item;
     }
 
-    @Override public int size() {
+    @Override
+    public int size() {
         return arr.length;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public Object get(int index) {
+    public T get(int index) {
         return (T) arr[index];
     }
 

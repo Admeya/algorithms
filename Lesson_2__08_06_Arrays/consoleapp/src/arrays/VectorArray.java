@@ -1,9 +1,22 @@
 package arrays;
 
+/**
+ * Реализация динамического массива с увеличением массива на константную величину
+ * при исчерпании свободного места в массиве
+ */
 public class VectorArray<T> implements IArray<T> {
 
+    /**
+     * Внутренний массив элементов
+     */
     private Object[] arr;
+    /**
+     * Количество элементов, которое будет зарезервировано для вставки будущих элементов
+     */
     private int vector;
+    /**
+     * Фактическое число элементов в массиве
+     */
     private int size;
 
     public VectorArray(int vector) {
@@ -13,7 +26,6 @@ public class VectorArray<T> implements IArray<T> {
     }
 
     public VectorArray() {
-
         this(100);
     }
 
@@ -27,19 +39,17 @@ public class VectorArray<T> implements IArray<T> {
 
     void resize() {
         Object[] newArray = new Object[size() + vector];
-        //    for (int i = 0; i < size() ; i++) {
-        //      newArray[i] = arr[i];
-        //
-        //    }
         System.arraycopy(arr, 0, newArray, 0, size());
         arr = newArray;
     }
 
-    @Override public int size() {
+    @Override
+    public int size() {
         return size;
     }
 
-    @Override public T get(int index) {
-        return null;
+    @Override
+    public T get(int index) {
+        return (T) arr[index];
     }
 }

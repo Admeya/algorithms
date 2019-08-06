@@ -1,15 +1,21 @@
 package arrays;
 
+/**
+ * Тестовый класс
+ */
 public class Program {
+
     public static void main(String[] args) {
         IArray<String> single = new SingleArray<>();
-        addValues(single, 1000000);
+        addValues(single, 100000);
 
         IArray<String> vector = new VectorArray<>();
-        addValues(vector, 1000000);
+        addValues(vector, 100000);
 
         IArray<String> factor = new FactorArray<>();
-        addValues(factor, 1000000);
+        addValues(factor, 100000);
+
+
     }
 
     static void addValues(IArray<String> array, int count) {

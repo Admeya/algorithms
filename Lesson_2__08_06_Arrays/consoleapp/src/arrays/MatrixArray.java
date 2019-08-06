@@ -1,5 +1,8 @@
 package arrays;
 
+/**
+ * Массив массивов для реализации динамического массива
+ */
 public class MatrixArray<T> implements IArray<T> {
     private IArray<IArray<T>> arr;
     private int vector;
