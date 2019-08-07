@@ -20,16 +20,19 @@ public class MatrixArray<T> implements IArray<T> {
         if (size == arr.size() * vector) {
             arr.add(new VectorArray<>(vector));
         }
-        arr.get(size/vector).add(item);
+        arr.get(size / vector).add(item);
+        size++;
     }
 
-    @Override public int size() {
+    @Override
+    public int size() {
         return size;
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public T get(int index) {
-        return null;
+        return arr.get(index / vector)
+                .get(index % vector);
     }
 }
