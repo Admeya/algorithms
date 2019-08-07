@@ -1,0 +1,25 @@
+<input> 1 3
+read 1 ; делимое. Будет в этом же регистре и уменьшаться
+read 2 ; делитель
+load =0
+store 3 ; частное = количество повторений
+load 1
+store 4 ; для хранения промежуточных вычислений по остатку от деления
+load =0
+store 5 ; для хранения промежуточных вычислений по частному
+loop:
+load 4
+store 1
+load 5
+store 3
+load 1
+sub 2
+store 4
+load 3
+add =1
+store 5
+load 4
+jgtz loop
+write 3
+write 1
+halt
