@@ -62,5 +62,14 @@ public class Solution {
       }
     });
 
+    //   List<Path> list = null;
+    //    try {
+    //        Path path = Path.of(root);
+    //        list = Files.walk(path).filter(p -> p != path && p.toFile().isDirectory()).collect(Collectors.toList());
+    //    } catch (IOException e) {
+    //        // TODO implement better exception handling
+    //        e.printStackTrace();
+    //    }
+
   }
 }
